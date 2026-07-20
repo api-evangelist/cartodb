@@ -1,0 +1,47 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.carto.com/carto-for-developers/key-concepts/authentication-methods
+docs: https://docs.carto.com/carto-for-developers/key-concepts/authentication-methods
+summary:
+  types: [apiKey, oauth2, openIdConnect]
+  api_key_in: [header, query]
+  header: 'Authorization: Bearer <token>'
+  oauth2_flows: [authorizationCode, clientCredentials]
+  oauth2_audience: carto-cloud-native-api
+  identity_provider: Auth0 (auth.carto.com)
+schemes:
+- name: API Access Token
+  type: apiKey
+  in: header
+  description: >-
+    Permanent, non-expiring token generated in the CARTO Workspace. Simple to
+    generate, scoped/restrictive, and not tied to a specific user. Passed as a
+    Bearer token in the Authorization header (also accepted as an access_token
+    query parameter on some map/tile endpoints).
+  docs: https://docs.carto.com/carto-for-developers/key-concepts/authentication-methods/api-access-tokens
+- name: OAuth Access Token
+  type: oauth2
+  description: >-
+    Short-lived (24h) OAuth 2.0 bearer token tied to a user's permissions,
+    obtained through the Auth0-backed CARTO identity provider. Used for both
+    user-to-machine (SPA) and machine-to-machine access to the Cloud-Native API.
+  docs: https://docs.carto.com/carto-for-developers/key-concepts/authentication-methods/oauth-access-tokens
+  audience: carto-cloud-native-api
+  flows:
+  - flow: authorizationCode
+    grant: authorization_code
+    authorizationUrl: https://auth.carto.com/authorize
+    tokenUrl: https://auth.carto.com/oauth/token
+    client_type: SPA (Single Page Application) OAuth client
+  - flow: clientCredentials
+    grant: client_credentials
+    tokenUrl: https://auth.carto.com/oauth/token
+    client_type: M2M (Machine-to-Machine) OAuth client
+- name: OpenID Connect
+  type: openIdConnect
+  openIdConnectUrl: https://auth.carto.com/.well-known/openid-configuration
+  description: >-
+    Auth0 OIDC discovery for the CARTO identity provider; issuer
+    https://auth.carto.com/. Standard OIDC scopes (openid, profile, email,
+    offline_access) supported for user login and refresh tokens.
+  sources: [well-known/cartodb-openid-configuration.json]
