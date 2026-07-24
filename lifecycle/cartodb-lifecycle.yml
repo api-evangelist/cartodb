@@ -1,0 +1,15 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.carto.com/release-notes
+versioning:
+  scheme: uri-path
+  current: v3
+  docs: https://docs.carto.com/carto-for-developers
+deprecation:
+  policy_url: null
+  note: No dedicated deprecation/sunset-header policy page was located; not asserted.
+sla:
+  url: https://carto.com/legal/tcs/
+  note: SLA distributed as a signed document referenced from CARTO's master terms.
+status_page: https://status.carto.com
+changelog: https://docs.carto.com/release-notes

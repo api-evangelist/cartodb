@@ -1,0 +1,33 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.carto.com/carto-for-developers
+docs: https://docs.carto.com/carto-for-developers/key-concepts
+authentication:
+  style: Bearer token (Authorization header)
+  schemes: [API Access Token, OAuth 2.0 access token]
+  audience: carto-cloud-native-api
+  ref: authentication/cartodb-authentication.yml
+versioning:
+  scheme: uri-path
+  current: v3
+  note: Cloud-Native REST endpoints are namespaced under /v3/ (e.g. /v3/sql/{connection}).
+  ref: lifecycle/cartodb-lifecycle.yml
+async_jobs:
+  note: >-
+    The SQL API separates synchronous queries (GET /v3/sql/{connection}/query,
+    which return results) from asynchronous SQL jobs (POST /v3/sql/{connection}/job)
+    for long-running DDL/DML; MCP/Workflow async jobs expose get_status and
+    get_results operations for polling.
+regionalization:
+  note: >-
+    The API base host is region/tenant specific (e.g. gcp-us-east1.api.carto.com);
+    clients must target their organization's assigned regional host.
+error_handling:
+  ref: conformance/cartodb-conformance.yml
+rate_limiting:
+  note: Usage is metered against org quotas (Pay-As-You-Go / committed tiers); see pricing and org quota tooling (carto org).
+idempotency:
+  supported: unknown
+  note: >-
+    No provider-documented idempotency-key contract was found for the Cloud-Native
+    REST API; not asserting idempotency support.

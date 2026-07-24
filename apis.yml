@@ -1,8 +1,18 @@
 aid: cartodb
-name: Cartodb
-description: 'Cartodb is a company surfaced as a portfolio company of earlybird and added to the API Evangelist
-  network as a stub for enrichment. Sector: developer-tools. This profile is a lead awaiting the enrichment
-  pipeline.'
+name: CARTO
+description: >-
+  CARTO (formerly CartoDB) is a cloud-native location intelligence and spatial
+  analytics platform that runs directly on top of modern cloud data warehouses
+  including Google BigQuery, Snowflake, Amazon Redshift, Databricks, PostgreSQL
+  and Oracle. Developers use the CARTO Cloud-Native (v3) APIs — SQL API, Maps API,
+  Import/Export API, Location Data Services (geocoding, routing, isolines) and the
+  Data Observatory — together with the deck.gl visualization stack, the CARTO for
+  React library, and Python packages to build interactive geospatial applications
+  and analytical workflows. CARTO is notably agent-native: it ships a hosted MCP
+  Server, a first-party `carto` CLI, and a public catalog of 23 Agent Skills for
+  spatial analysis. Authentication is via permanent API Access Tokens or Auth0-backed
+  OAuth (SPA authorization-code and machine-to-machine client-credentials) scoped to
+  the `carto-cloud-native-api` audience.
 url: https://raw.githubusercontent.com/api-evangelist/cartodb/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -10,15 +20,124 @@ x-backed-by:
 - earlybird
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
+image: https://carto.com/favicon.ico
 tags:
 - Company
 - Developer Tools
-apis: []
+- Location Intelligence
+- Geospatial
+- Maps
+- Spatial Analytics
+- Data Warehouse
+- GIS
+- Agents
+apis:
+- name: CARTO Cloud-Native API
+  description: >-
+    The CARTO Cloud-Native (v3) REST API surface — SQL API (query and async SQL
+    jobs against a connected data warehouse), Maps API (vector/tile map
+    instantiation), Import/Export API, Location Data Services (geocoding, routing,
+    isolines), Data Observatory, and the Workflow API. Regional base host; US Cloud
+    shown. Authenticated with API Access Tokens or OAuth bearer tokens.
+  humanURL: https://docs.carto.com/carto-for-developers
+  baseURL: https://gcp-us-east1.api.carto.com
+  tags:
+  - SQL API
+  - Maps API
+  - Geospatial
+  - Location Data Services
+  properties:
+  - type: Documentation
+    url: https://docs.carto.com/carto-for-developers
+  - type: APIReference
+    url: https://docs.carto.com/carto-for-developers/reference
+  - type: Authentication
+    url: authentication/cartodb-authentication.yml
+  - type: OAuthScopes
+    url: scopes/cartodb-scopes.yml
+  - type: Conventions
+    url: conventions/cartodb-conventions.yml
+  - type: Lifecycle
+    url: lifecycle/cartodb-lifecycle.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+common:
+- type: DeveloperPortal
+  url: https://docs.carto.com/carto-for-developers
+- type: Documentation
+  url: https://docs.carto.com/
+- type: APIReference
+  url: https://docs.carto.com/carto-for-developers/reference
+- type: GettingStarted
+  url: https://docs.carto.com/carto-for-developers/overview
+- type: Support
+  url: https://docs.carto.com/carto-user-manual/carto-support
+- type: Blog
+  url: https://carto.com/blog
+- type: GitHubOrganization
+  url: https://github.com/CartoDB
+- type: ChangeLog
+  url: https://docs.carto.com/whats-new
+- type: LLMsTxt
+  url: llms/cartodb-llms.txt
+- type: Pricing
+  url: https://carto.com/pricing/
+- type: SignUp
+  url: https://app.carto.com/signup
+- type: Login
+  url: https://app.carto.com
+- type: TermsOfService
+  url: https://carto.com/legal/tcs/
+- type: PrivacyPolicy
+  url: https://carto.com/privacy/
+- type: Authentication
+  url: authentication/cartodb-authentication.yml
+- type: OAuthScopes
+  url: scopes/cartodb-scopes.yml
+- type: WellKnown
+  url: well-known/cartodb-well-known.yml
+- type: MCPServer
+  url: mcp/cartodb-mcp.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: Packages
+  url: packages/cartodb-packages.yml
+- type: SDKs
+  url: packages/cartodb-packages.yml
+- type: CLI
+  url: cli/cartodb-cli.yml
+- type: Conventions
+  url: conventions/cartodb-conventions.yml
+- type: Conformance
+  url: conformance/cartodb-conformance.yml
+- type: Lifecycle
+  url: lifecycle/cartodb-lifecycle.yml
+- type: StatusPage
+  url: https://status.carto.com
+- type: TrustCenter
+  url: security/cartodb-trust-center.yml
+- type: DomainSecurity
+  url: security/cartodb-domain-security.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

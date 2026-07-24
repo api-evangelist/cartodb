@@ -1,0 +1,83 @@
+generated: '2026-07-18'
+method: searched
+source: https://github.com/CartoDB/agent-skills
+docs: https://docs.carto.com/carto-for-agents/agent-skills/skills-catalog
+note: >-
+  CARTO publishes a first-party, always-up-to-date catalog of Agent Skills in the
+  public GitHub repository CartoDB/agent-skills (canonical catalog at
+  skills/catalog.json). These are provider-authored skills grounded in the `carto`
+  CLI and MCP Server; captured here verbatim by name/description rather than
+  re-generated. Skills are grouped into Utility, Platform, and Use-Case tiers.
+distribution:
+  github: https://github.com/CartoDB/agent-skills
+  catalog: https://github.com/CartoDB/agent-skills/blob/main/skills/catalog.json
+skills:
+- name: carto-basics
+  tier: utility
+  description: Start here for first-time CARTO CLI use — install, authenticate, switch profiles.
+- name: carto-connect-datawarehouse
+  tier: utility
+  description: Configure connections to BigQuery, Snowflake, Redshift, Postgres, or Databricks.
+- name: carto-query-datawarehouse
+  tier: utility
+  description: Execute spatial SQL queries with dialect-specific guidance.
+- name: carto-explore-datawarehouse
+  tier: utility
+  description: Discover schemas, tables, columns, and named sources in warehouses.
+- name: carto-import-export-data
+  tier: platform
+  description: Import geospatial files and export results; prepare tilesets for rendering.
+- name: carto-create-workflow
+  tier: platform
+  description: Build, schedule, and operate analytics DAGs in CARTO Workflows.
+- name: carto-find-spatial-data
+  tier: platform
+  description: Access external datasets via Data Observatory and partner catalogs.
+- name: carto-manage-platform
+  tier: platform
+  description: Administer org users, roles, quotas, and audit activity.
+- name: carto-create-builder-maps
+  tier: platform
+  description: Author maps via CLI with layers, styling, and sharing options.
+- name: carto-render-inline-map
+  tier: platform
+  description: Display ad-hoc interactive maps from deck.gl specs in chat.
+- name: carto-preview-builder-map
+  tier: platform
+  description: Preview existing CARTO Builder maps inline in conversations.
+- name: carto-develop-app
+  tier: platform
+  description: Generate full geospatial applications with basemaps, layers, widgets, and auth.
+- name: carto-hotspot-analysis
+  tier: use-case
+  description: Getis-Ord Gi* hotspot and cluster detection workflows.
+- name: carto-spatial-autocorrelation
+  tier: use-case
+  description: Moran's I spatial dependency and quadrant classification.
+- name: carto-gwr
+  tier: use-case
+  description: Geographically Weighted Regression for spatially varying relationships.
+- name: carto-spatial-enrichment
+  tier: use-case
+  description: Add demographic and sociodemographic features to locations.
+- name: carto-trade-area-analysis
+  tier: use-case
+  description: Isochrone and drive-time catchment area modeling.
+- name: carto-site-selection
+  tier: use-case
+  description: Location optimization and cannibalization analysis.
+- name: carto-territory-planning
+  tier: use-case
+  description: Sales territory balancing and hub placement.
+- name: carto-routing-od-analysis
+  tier: use-case
+  description: Travel routing and origin-destination matrix computation.
+- name: carto-geocoding
+  tier: use-case
+  description: Convert addresses/place names to geographic coordinates.
+- name: carto-composite-scoring
+  tier: use-case
+  description: Multi-variable ranking and index generation.
+- name: carto-arcgis-migration
+  tier: use-case
+  description: Migrate ArcGIS Portal/AGOL content to CARTO.

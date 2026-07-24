@@ -1,0 +1,26 @@
+generated: '2026-07-18'
+method: searched
+source: live probes of CARTO API, website, and Auth0 auth hosts
+documents:
+- host: https://auth.carto.com
+  path: /.well-known/openid-configuration
+  status: 200
+  file: cartodb-openid-configuration.json
+  note: OIDC discovery for the Auth0-backed CARTO identity provider (auth.carto.com)
+- host: https://auth.carto.com
+  path: /.well-known/oauth-authorization-server
+  status: 200
+  file: cartodb-oauth-authorization-server.json
+  note: RFC 8414 authorization-server metadata (issuer https://auth.carto.com/)
+- host: https://gcp-us-east1.api.carto.com
+  path: /.well-known/security.txt
+  status: 404
+- host: https://gcp-us-east1.api.carto.com
+  path: /.well-known/openid-configuration
+  status: 404
+- host: https://carto.com
+  path: /.well-known/security.txt
+  status: 404
+- host: https://carto.com
+  path: /.well-known/ai-plugin.json
+  status: 404

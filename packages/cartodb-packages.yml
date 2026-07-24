@@ -1,0 +1,46 @@
+generated: '2026-07-18'
+method: searched
+source: npm, PyPI, and CARTO developer docs
+packages:
+- language: javascript
+  registry: npm
+  name: "@carto/carto-cli"
+  url: https://www.npmjs.com/package/@carto/carto-cli
+  install: npm install -g @carto/carto-cli
+  version: 0.9.0
+  official: true
+  description: The CARTO CLI enables humans and agents to completely operate CARTO from the command line.
+- language: javascript
+  registry: npm
+  name: "@carto/api-client"
+  url: https://www.npmjs.com/package/@carto/api-client
+  install: npm install @carto/api-client
+  version: 0.5.31
+  repository: https://github.com/CartoDB/carto-api-client
+  official: true
+  description: Client library for CARTO APIs and framework-agnostic CARTO + deck.gl applications.
+- language: javascript
+  registry: npm
+  name: "@deck.gl/carto"
+  url: https://www.npmjs.com/package/@deck.gl/carto
+  install: npm install @deck.gl/carto
+  version: 9.3.7
+  official: true
+  description: CARTO official integration with deck.gl for building geospatial applications.
+- language: python
+  registry: pypi
+  name: cartoframes
+  url: https://pypi.org/project/cartoframes/
+  install: pip install cartoframes
+  version: 1.2.5
+  official: true
+  description: CARTO Python package for data scientists.
+- language: python
+  registry: pypi
+  name: carto
+  url: https://pypi.org/project/carto/
+  install: pip install carto
+  version: 1.11.3
+  repository: https://github.com/CartoDB/carto-python
+  official: true
+  description: SDK around CARTO's APIs (carto-python).

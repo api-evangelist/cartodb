@@ -1,0 +1,34 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.carto.com/carto-for-developers/key-concepts/authentication-methods/oauth-access-tokens
+docs: https://docs.carto.com/carto-for-developers/key-concepts/authentication-methods
+note: >-
+  CARTO authenticates the Cloud-Native API with OAuth 2.0 bearer tokens issued by
+  the Auth0-backed identity provider (auth.carto.com) for the
+  `carto-cloud-native-api` audience. API-resource permissions are carried on the
+  token as the user's/M2M-client's granted access rather than a fixed public scope
+  registry; the OIDC identity scopes below come verbatim from the auth server's
+  discovery document.
+schemes:
+- name: OAuth2
+  source: well-known/cartodb-oauth-authorization-server.json
+  audience: carto-cloud-native-api
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://auth.carto.com/authorize
+    tokenUrl: https://auth.carto.com/oauth/token
+  - flow: clientCredentials
+    tokenUrl: https://auth.carto.com/oauth/token
+scopes:
+- scope: openid
+  description: OIDC authentication; issue an ID token.
+  sources: [well-known/cartodb-openid-configuration.json]
+- scope: profile
+  description: Access the user's basic profile claims.
+  sources: [well-known/cartodb-openid-configuration.json]
+- scope: email
+  description: Access the user's email and email_verified claims.
+  sources: [well-known/cartodb-openid-configuration.json]
+- scope: offline_access
+  description: Issue a refresh token for long-lived access.
+  sources: [well-known/cartodb-openid-configuration.json]

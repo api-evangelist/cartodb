@@ -1,0 +1,60 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.carto.com/carto-for-agents/cli
+docs: https://docs.carto.com/carto-for-agents/cli/command-reference
+name: carto
+binary: carto
+package: "@carto/carto-cli"
+install:
+- npm install -g @carto/carto-cli
+- standalone executables for macOS, Linux, and Windows (no Node.js required)
+requires: Node.js 18+ (for the npm install) and a CARTO organization account
+auth: carto auth login
+deployments: [CARTO Cloud, CARTO Self-Hosted]
+command_groups:
+- group: Authentication & Access
+  commands:
+  - name: carto auth
+    description: Personal authentication — log in, log out, switch profiles, check status.
+  - name: carto credentials
+    description: Manage application credentials (API tokens, SPA OAuth clients, M2M OAuth clients).
+- group: Resource Management
+  commands:
+  - name: carto maps
+    description: Manage Builder maps — create, update, validate, publish, schema, agents, copy, screenshot.
+  - name: carto workflows
+    description: Manage Workflows — create, update, validate, verify, run, share, schedule, mcp publish.
+  - name: carto projects
+    description: Manage projects (folders) that group maps and workflows, with local-sync.
+- group: Data & Connections
+  commands:
+  - name: carto connections
+    description: Manage data-warehouse connections.
+  - name: carto named-sources
+    description: Manage Named Sources — server-side aliases for SQL queries.
+  - name: carto sql
+    description: Run SQL queries (returns results) and SQL jobs (DDL/DML) on your data warehouse.
+- group: Data Operations
+  commands:
+  - name: carto do
+    description: Data Observatory — browse, search, sample, subscribe to spatial datasets.
+  - name: carto imports
+    description: Import geospatial files (CSV, GeoJSON, GeoPackage, Shapefile, ...).
+  - name: carto export
+    description: Export warehouse tables to file (GeoParquet, GeoJSON, Shapefile, CSV, ...).
+  - name: carto transfer
+    description: Transfer data between warehouses.
+- group: Organization & Administration
+  commands:
+  - name: carto org
+    description: View organization statistics, resources, and quotas.
+  - name: carto users
+    description: Manage organization users and pending invitations.
+  - name: carto activity
+    description: Query and export activity logs and usage data.
+  - name: carto admin
+    description: Superadmin operations — list-all, batch-delete, transfer.
+- group: AI Features
+  commands:
+  - name: carto ai
+    description: Chat with map AI agents and access CARTO's LLM proxy.

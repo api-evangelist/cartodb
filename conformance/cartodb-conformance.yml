@@ -1,0 +1,26 @@
+generated: '2026-07-18'
+method: searched
+source: >-
+  https://docs.carto.com/carto-for-developers/key-concepts/authentication-methods
+  + well-known/cartodb-oauth-authorization-server.json
+standards:
+- id: oauth2
+  conforms: true
+  evidence: >-
+    OAuth 2.0 authorization-code (SPA) and client-credentials (M2M) flows against
+    auth.carto.com; RFC 8414 authorization-server metadata published at
+    /.well-known/oauth-authorization-server.
+- id: oidc
+  conforms: true
+  evidence: >-
+    OIDC discovery document published at auth.carto.com/.well-known/openid-configuration
+    (issuer https://auth.carto.com/).
+- id: rfc8414-oauth-metadata
+  conforms: true
+  evidence: well-known/cartodb-oauth-authorization-server.json returns 200.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Not verified — no application/problem+json contract confirmed in the docs.
+- id: pkce
+  conforms: true
+  evidence: SPA authorization-code OAuth clients per CARTO auth docs (Auth0 SPA app type).

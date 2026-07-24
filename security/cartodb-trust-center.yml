@@ -1,0 +1,15 @@
+generated: '2026-07-18'
+method: searched
+probe: true
+url: https://security.carto.com/
+platform: Vanta Trust Center
+certifications: []
+note: >-
+  CARTO operates a public, Vanta-powered Trust Center at security.carto.com
+  (carto.com/security redirects there, HTTP 301 -> 200). The specific named
+  certifications are rendered client-side by the Vanta SPA and were not
+  machine-verifiable from the served HTML, so none are asserted here; the page
+  itself is a confirmed, live trust surface.
+evidence:
+- source: https://security.carto.com/
+  keywords: [trust, security, compliance, vanta]
