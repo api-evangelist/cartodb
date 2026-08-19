@@ -14,15 +14,13 @@ server:
   discovery: CARTO Workspace > Developers > Workflow API & MCP Server (CARTO AI)
 auth:
 - method: OAuth (U2M)
-  note: >-
-    Interactive login. Claude.ai and Claude Code connect with just the URL (no
-    OAuth client needed); other clients use an SPA OAuth client.
+  note: Interactive login. Claude.ai and Claude Code connect with just the URL (no OAuth client needed);
+    other clients use an SPA OAuth client.
 - method: OAuth (M2M)
   note: Unattended access using an M2M OAuth client.
 - method: API Access Token
-  note: >-
-    Unattended access with predefined scopes. The list_maps tool is currently
-    unavailable with this method.
+  note: Unattended access with predefined scopes. The list_maps tool is currently unavailable with this
+    method.
 tools:
 - group: platform
   items:
@@ -44,9 +42,18 @@ tools:
     description: Display saved CARTO Builder maps within the conversation.
 - group: workflow
   items:
-  - name: '<published workflows>'
+  - name: <published workflows>
     description: Run custom analytical workflows the organization has published.
   - name: async_workflow_job_get_status_v1_0_0
     description: Check the status of asynchronous workflow executions.
   - name: async_workflow_job_get_results_v1_0_0
     description: Retrieve results from completed async workflow jobs.
+deployment:
+  mode: none
+  endpoint: https://gcp-us-east1.api.carto.com/mcp/
+  verified: probed
+  probe: dead
+  note: the endpoint this manifest claimed did not answer; recorded as none rather than deleted so the
+    claim stays auditable
+  checked: '2026-08-12'
+  source: catalog MCP census
