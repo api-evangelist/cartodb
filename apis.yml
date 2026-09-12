@@ -91,6 +91,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: Website
+  url: https://www.carto.com/
 - type: DeveloperPortal
   url: https://docs.carto.com/carto-for-developers
 - type: Documentation
